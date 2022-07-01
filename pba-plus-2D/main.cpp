@@ -43,6 +43,7 @@ SOFTWARE.
 #include <math.h>
 #include <time.h>
 #include <ctype.h>
+#include <climits>  //add this h file for line85:ULONG_MAX
 
 #include "pba/pba2D.h"
 
@@ -80,8 +81,9 @@ unsigned long CONG()
 { return (jcong = 69069 * jcong + 1234567); }
 unsigned long rand_int()         // [0,2^32-1]
 { return ((MWC() ^ CONG()) + SHR3()); }
-double random()     // [0,1)
+double random_my()     // [0,1) 
 { return ((double) rand_int() / (double(ULONG_MAX)+1)); }
+//↑ change the func name random to random_my, cause random was already defined in the include/stdlib.h:401:17 as 'long int random()'
 
 // Generate input points
 void generateRandomPoints(int width, int height, int nPoints)
@@ -96,8 +98,8 @@ void generateRandomPoints(int width, int height, int nPoints)
     for (int i = 0; i < nPoints; i++)
     {
         do {
-            tx = int(random() * width); 
-            ty = int(random() * height); 
+            tx = int(random_my() * width); 
+            ty = int(random_my() * height); 
         } while (inputVoronoi[(ty * width + tx) * 2] != MARKER); 
 
         inputVoronoi[(ty * width + tx) * 2    ] = tx; 

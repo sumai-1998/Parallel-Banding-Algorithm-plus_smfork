@@ -1,3 +1,6 @@
+# 👇new sm_fork README
+Add two cmake files to complie with cmake, change add a h file and change a func name in 2D/main.cpp.
+# 👇Raw README
 <p align="center">
 <img src="_.jpg" width=500 />
 </p>
