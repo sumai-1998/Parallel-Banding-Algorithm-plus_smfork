@@ -1,5 +1,7 @@
 # 👇new sm_fork README
-Add two cmake files to complie with cmake, change add a h file and change a func name in 2D/main.cpp.
+Add: two cmake files to complie with cmake
+Change: add a h file and change a func name in 2D&3D/main.cpp.
+⚡Note: 'int fboSize = 2048;' seems the resolution of the grid, and it MUST be 2^k with k >= 5!!!!!!! 
 # 👇Raw README
 <p align="center">
 <img src="_.jpg" width=500 />
