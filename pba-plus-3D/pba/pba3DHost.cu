@@ -38,7 +38,7 @@ SOFTWARE.
 */
 
 #include <device_functions.h>
-#include <helper_timer.h>
+// #include <helper_timer.h>   //can't import, just comment out and is okay
 
 #include "pba3D.h"
 
